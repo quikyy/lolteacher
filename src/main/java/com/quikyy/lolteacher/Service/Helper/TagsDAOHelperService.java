@@ -18,14 +18,14 @@ public class TagsDAOHelperService {
 	private final Logger logger = LoggerFactory.getLogger(TagsDAOHelperService.class);
 
 	public void saveAllTags() {
-		List<String> tags = new ArrayList<>();
-		tags.add("Fighter");
-		tags.add("Support");
-		tags.add("Mage");
-		tags.add("Assassin");
-		tags.add("Tank");
-		tags.add("Marksman");
-		tags.forEach(tag -> tagDAORepo.save(new TagDAO(tag)));
+		List<TagDAO> tags = new ArrayList<>();
+		tags.add(new TagDAO("Fighter", "Wojownik"));
+		tags.add(new TagDAO("Support", "Wspierający"));
+		tags.add(new TagDAO("Mage", "Mag"));
+		tags.add(new TagDAO("Assassin", "Zabójca"));
+		tags.add(new TagDAO("Tank", "Obrońca"));
+		tags.add(new TagDAO("Marksman", "Strzelający"));
+		tagDAORepo.saveAll(tags);
 		logger.info("[RESTAPI] Tags saved.");
 	}
 }

@@ -49,14 +49,6 @@ public class ChampionDAO {
 	@Column(name = "title_polish")
 	private String titlePolish;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "partype_id")
-	private ParTypeDAO parType;
-
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "tag_id")
-	private Set<TagDAO> tags = new HashSet<>();
-
 	@Column(name = "hp")
 	private int hp;
 
@@ -92,4 +84,12 @@ public class ChampionDAO {
 
 	@Column(name = "attack_range")
 	private int attackRange;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "partype_id")
+	private ParTypeDAO parType;
+
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tag_id")
+	private Set<TagDAO> tags = new HashSet<>();
 }

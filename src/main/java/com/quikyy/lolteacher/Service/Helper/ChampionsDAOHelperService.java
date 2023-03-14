@@ -40,14 +40,14 @@ public class ChampionsDAOHelperService {
 		List<ChampionDAO> championDAOs = new ArrayList<>();
 		championsObjects.forEach(championNode -> {
 
-			ChampionDAO championDAO = parseObjectNodeToChampionDAO(championNode);
+			ChampionDAO championDAO = parseObjectNodeToChampionDao(championNode);
 			championDAOs.add(championDAO);
 		});
 		championsDAORepo.saveAll(championDAOs);
 		logger.info("[RESTAPI] Champions saved.");
 	}
 
-	private ChampionDAO parseObjectNodeToChampionDAO(ObjectNode championNode) {
+	private ChampionDAO parseObjectNodeToChampionDao(ObjectNode championNode) {
 		ChampionDAO championDAO = new ChampionDAO();
 		championDAO.setName(championNode.get("name").asText());
 		championDAO.setSlug(championNode.get("slug").asText());
@@ -92,8 +92,6 @@ public class ChampionsDAOHelperService {
 		if(championsNodesEnglish == null) {
 			return null;
 		}
-
-
 
 		for(JsonNode championEnglishNode : championsNodesEnglish) {
 			String championSlug = championEnglishNode.get("id").asText();
@@ -148,15 +146,6 @@ public class ChampionsDAOHelperService {
 		return champions.get("data");
 	}
 
-	private JsonNode fetchChampionDetails(Language language, String championSlug) throws IOException, InterruptedException {
-		JsonNode champion = LolHttpClient.fetchChampionDetailsByLanguageAndChampionSlug(language, championSlug);
-		if(champion == null) {
-			logger.warn("[RESTAPI] " + championSlug + ", lang " + language + " is null.");
-			return null;
-		}
-		return champion.get("data").get(championSlug);
-	}
-
 	private String getChampionAvatarUrl(String championSlug) {
 		return "http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/" + championSlug + ".png";
 	}
@@ -167,7 +156,7 @@ public class ChampionsDAOHelperService {
 
 	private ArrayNode getChampionTags(JsonNode championEnglish) {
 		JsonNode tags = championEnglish.get("tags");
-		if(tags == null) {
+		if (tags == null) {
 			return null;
 		}
 		ArrayNode tagsArrayNode = new ArrayNode(JsonNodeFactory.instance);
