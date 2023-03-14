@@ -24,10 +24,14 @@ public class TagDAO {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigInteger id;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "name_english")
+	private String nameEnglish;
 
-	public TagDAO(String name) {
-		this.name = name;
+	@Column(name = "name_polish")
+	private String namePolish;
+
+	public TagDAO(String nameEnglish, String namePolish) {
+		this.nameEnglish = nameEnglish;
+		this.namePolish = namePolish;
 	}
 }

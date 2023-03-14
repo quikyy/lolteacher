@@ -1,19 +1,16 @@
-package com.quikyy.lolteacher.Model.DTO;
+package com.quikyy.lolteacher.Model.DTO.Champion;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChampionDTO {
+@Getter @Setter
+public class ChampionSkinDTO {
 
-	private String avatarUrl;
-	private String splashUrl;
-
+	private int number;
 	private String name;
-	private String slug;
+	private String url;
 }

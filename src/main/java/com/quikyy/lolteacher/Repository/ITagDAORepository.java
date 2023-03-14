@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ITagDAORepository extends PagingAndSortingRepository<TagDAO, BigInteger> {
 
-	@Query(value = "SELECT * from tags WHERE name = :tagName", nativeQuery = true)
+	@Query(value = "SELECT * from tags WHERE name_english = :tagName", nativeQuery = true)
 	TagDAO getTag(@Param("tagName") String tagName);
-
 }
