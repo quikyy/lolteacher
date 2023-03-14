@@ -57,24 +57,24 @@ public class ChampionsDAOHelperService {
 		championDAO.setTitleEnglish(championNode.get("titleEnglish").asText());
 		championDAO.setTitlePolish(championNode.get("titlePolish").asText());
 
-//		championDAO.setHp(championNode.get("hp").asInt());
-//		championDAO.setHpPerLevel(championNode.get("hpPerLevel").asInt());
-//
-//		championDAO.setMoveSpeed(championNode.get("movespeed").asInt());
-//
-//		championDAO.setArmor(championNode.get("armor").asInt());
-//		championDAO.setArmorPerLevel(championNode.get("armorPerLevel").asDouble());
-//
-//		championDAO.setMagicResist(championNode.get("magicResist").asInt());
-//		championDAO.setMagicResistPerLevel(championNode.get("magicResistPerLevel").asDouble());
-//
-//		championDAO.setAttackDamage(championNode.get("attackDamage").asInt());
-//		championDAO.setAttackDamagePerLevel(championNode.get("attackDamagePerLevel").asDouble());
-//
-//		championDAO.setAttackSpeed(championNode.get("attackSpeed").asDouble());
-//		championDAO.setAttackSpeedPerLevel(championNode.get("attackSpeedPerLevel").asDouble());
-//
-//		championDAO.setAttackRange(championNode.get("attackRange").asInt());
+		championDAO.setHp(championNode.get("hp").asInt());
+		championDAO.setHpPerLevel(championNode.get("hpPerLevel").asInt());
+
+		championDAO.setMoveSpeed(championNode.get("movespeed").asInt());
+
+		championDAO.setArmor(championNode.get("armor").asInt());
+		championDAO.setArmorPerLevel(championNode.get("armorPerLevel").asDouble());
+
+		championDAO.setMagicResist(championNode.get("magicResist").asInt());
+		championDAO.setMagicResistPerLevel(championNode.get("magicResistPerLevel").asDouble());
+
+		championDAO.setAttackDamage(championNode.get("attackDamage").asInt());
+		championDAO.setAttackDamagePerLevel(championNode.get("attackDamagePerLevel").asDouble());
+
+		championDAO.setAttackSpeed(championNode.get("attackSpeed").asDouble());
+		championDAO.setAttackSpeedPerLevel(championNode.get("attackSpeedPerLevel").asDouble());
+
+		championDAO.setAttackRange(championNode.get("attackRange").asInt());
 
 		String parTypeName = championNode.get("partype").asText();
 		championDAO.setParType(parTypesDAOService.getParTypeByName(parTypeName));
@@ -106,23 +106,23 @@ public class ChampionsDAOHelperService {
 
 			championNode.put("titleEnglish", championEnglishNode.get("title").asText());
 
-//			championNode.put("hp", championEnglishNode.get("stats").get("hp").asInt());
-//			championNode.put("hpPerLevel", championEnglishNode.get("stats").get("hpperlevel").asInt());
-//			championNode.put("movespeed", championEnglishNode.get("stats").get("movespeed").asInt());
-//
-//			championNode.put("armor", championEnglishNode.get("stats").get("armor").asInt());
-//			championNode.put("armorPerLevel", championEnglishNode.get("stats").get("armorperlevel").asDouble());
-//
-//			championNode.put("magicResist", championEnglishNode.get("stats").get("spellblock").asInt());
-//			championNode.put("magicResistPerLevel", championEnglishNode.get("stats").get("spellblockperlevel").asDouble());
-//
-//			championNode.put("attackDamage", championEnglishNode.get("stats").get("attackdamage").asInt());
-//			championNode.put("attackDamagePerLevel", championEnglishNode.get("stats").get("attackdamageperlevel").asDouble());
-//
-//			championNode.put("attackSpeed", championEnglishNode.get("stats").get("attackspeed").asDouble());
-//			championNode.put("attackSpeedPerLevel", championEnglishNode.get("stats").get("attackspeedperlevel").asDouble());
-//
-//			championNode.put("attackRange", championEnglishNode.get("stats").get("attackrange").asInt());
+			championNode.put("hp", championEnglishNode.get("stats").get("hp").asInt());
+			championNode.put("hpPerLevel", championEnglishNode.get("stats").get("hpperlevel").asInt());
+			championNode.put("movespeed", championEnglishNode.get("stats").get("movespeed").asInt());
+
+			championNode.put("armor", championEnglishNode.get("stats").get("armor").asInt());
+			championNode.put("armorPerLevel", championEnglishNode.get("stats").get("armorperlevel").asDouble());
+
+			championNode.put("magicResist", championEnglishNode.get("stats").get("spellblock").asInt());
+			championNode.put("magicResistPerLevel", championEnglishNode.get("stats").get("spellblockperlevel").asDouble());
+
+			championNode.put("attackDamage", championEnglishNode.get("stats").get("attackdamage").asInt());
+			championNode.put("attackDamagePerLevel", championEnglishNode.get("stats").get("attackdamageperlevel").asDouble());
+
+			championNode.put("attackSpeed", championEnglishNode.get("stats").get("attackspeed").asDouble());
+			championNode.put("attackSpeedPerLevel", championEnglishNode.get("stats").get("attackspeedperlevel").asDouble());
+
+			championNode.put("attackRange", championEnglishNode.get("stats").get("attackrange").asInt());
 
 			championNode.put("partype", championEnglishNode.get("partype").asText());
 			championNode.putArray("tags").addAll(getChampionTags(championEnglishNode));

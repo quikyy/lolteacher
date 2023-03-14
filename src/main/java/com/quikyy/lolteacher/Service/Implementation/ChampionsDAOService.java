@@ -1,5 +1,6 @@
 package com.quikyy.lolteacher.Service.Implementation;
 
+import com.quikyy.lolteacher.Model.DAO.ChampionDAO;
 import com.quikyy.lolteacher.Repository.IChampionsDAORepository;
 import com.quikyy.lolteacher.Service.Interface.IChampionsDAOService;
 import org.slf4j.Logger;
@@ -19,5 +20,8 @@ public class ChampionsDAOService implements IChampionsDAOService {
 	private final Logger logger = LoggerFactory.getLogger(ChampionsDAOService.class);
 
 
-
+	@Override
+	public ChampionDAO getChampion(String championSlug) {
+		return championsDAORepo.getChampionBySlug(championSlug);
+	}
 }
